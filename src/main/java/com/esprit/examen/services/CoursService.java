@@ -48,4 +48,9 @@ public class CoursService implements ICoursService {
         
 	}
 
+	@Override
+	public Long countCours() {
+		return coursRepository.count();
+	}
+
 }
