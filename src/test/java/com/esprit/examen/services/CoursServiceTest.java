@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
+
 import com.esprit.examen.entities.Cours;
 import com.esprit.examen.entities.TypeCours;
 import com.esprit.examen.repositories.CoursRepository;
@@ -17,6 +19,7 @@ public class CoursServiceTest {
 	CoursRepository coursRepository ;
 	
 	@Test
+	@Rollback(true)
 	public void testAddCours() {
 		Cours cours = new Cours();
 		cours.setDescription("Maîtrisez Javascript grâce au cours le plus complet sur internet ! Projets, exercices, quiz, ES8 et bien d’autres !");
@@ -26,6 +29,7 @@ public class CoursServiceTest {
 		coursRepository.save(cours);
 		Long dataAfterTest = coursRepository.count();
 		assertThat(dataPreTest).isEqualTo(dataAfterTest -1);
+		coursRepository.delete(cours);
 		
 	}
 }
