@@ -17,4 +17,6 @@ public interface ICoursService {
 	void affecterCoursASession(Long coursId, Long sessionId);
 	
 	Long countCours();
+
+	void deleteAll();
 }

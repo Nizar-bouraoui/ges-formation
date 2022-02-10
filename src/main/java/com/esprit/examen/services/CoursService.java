@@ -53,4 +53,10 @@ public class CoursService implements ICoursService {
 		return coursRepository.count();
 	}
 
+	@Override
+	public void deleteAll() {
+		coursRepository.deleteAll();
+		
+	}
+
 }
