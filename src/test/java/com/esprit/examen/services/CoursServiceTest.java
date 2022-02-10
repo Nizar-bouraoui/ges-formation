@@ -19,16 +19,15 @@ public class CoursServiceTest {
 	CoursRepository coursRepository ;
 	
 	@Test
-	@Rollback(true)
 	public void testAddCours() {
 		Cours cours = new Cours();
 		cours.setDescription("Maîtrisez Javascript grâce au cours le plus complet sur internet ! Projets, exercices, quiz, ES8 et bien d’autres !");
 		cours.setIntitule("JavaScript : la formation ULTIME");
 		cours.setTypeCours(TypeCours.Informatique);
-		Long dataPreTest = coursRepository.count();
+		Long dataBeforeTest = coursRepository.count();
 		coursRepository.save(cours);
 		Long dataAfterTest = coursRepository.count();
-		assertThat(dataPreTest).isEqualTo(dataAfterTest -1);
+		assertThat(dataBeforeTest).isEqualTo(dataAfterTest -1);
 		coursRepository.delete(cours);
 		
 	}
