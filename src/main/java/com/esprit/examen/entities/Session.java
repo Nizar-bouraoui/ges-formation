@@ -1,6 +1,8 @@
 package com.esprit.examen.entities;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
 
@@ -39,14 +41,16 @@ public class Session implements Serializable{
 	public Date getDateDebut() {
 		return dateDebut;
 	}
-	public void setDateDebut(Date dateDebut) {
-		this.dateDebut = dateDebut;
+	public void setDateDebut(String dateDebut) throws ParseException {
+		Date DateDebut = new SimpleDateFormat("dd/MM/yyyy").parse(dateDebut);
+		this.dateDebut = DateDebut;
 	}
 	public Date getDateFin() {
 		return dateFin;
 	}
-	public void setDateFin(Date dateFin) {
-		this.dateFin = dateFin;
+	public void setDateFin(String dateFin) throws ParseException {
+		Date DateFin = new SimpleDateFormat("dd/MM/yyyy").parse(dateFin);
+		this.dateFin = DateFin;
 	}
 	public Long getDuree() {
 		return duree;
