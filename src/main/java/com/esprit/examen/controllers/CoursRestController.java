@@ -32,8 +32,9 @@ public Cours ajouterCours(@RequestBody CoursRequestedModel requestedModel) {
 
 @PutMapping("/modifierCours")
 @ResponseBody
-public Cours modifierCours(@RequestBody Cours cours) {
-	coursService.addCours(cours);
+public Cours modifierCours(@RequestBody CoursRequestedModel requestedModel) {
+	Cours cours = requestedModel.toCours();
+	coursService.modifierCours(cours);
 	return cours;
 }
 
