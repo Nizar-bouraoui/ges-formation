@@ -14,7 +14,7 @@ class CoursRequestedModelTest {
 	
 	@Test
 	void testToCours() {
-		CoursRequestedModel coursRequestedModel = new CoursRequestedModel(1L, "test",  TypeCours.Informatique,  "test");
+		CoursRequestedModel coursRequestedModel = new CoursRequestedModel();
 		coursRequestedModel.setId(1L);
 		coursRequestedModel.setDescription("test");
 		coursRequestedModel.setTypeCours(TypeCours.Informatique);
