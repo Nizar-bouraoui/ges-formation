@@ -5,7 +5,7 @@ import java.util.List;
 import com.esprit.examen.entities.Cours;
 
 public interface ICoursService {
-	Long addCours(Cours cours);
+	void addCours(Cours cours);
 
 	Long modifierCours(Cours cours);
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.esprit.examen.entities.Cours;
+import com.esprit.examen.requestedentities.CoursRequestedModel;
 import com.esprit.examen.services.ICoursService;
 
 @RestController
@@ -23,7 +24,8 @@ ICoursService coursService;
 
 @PostMapping("/ajouterCours")
 @ResponseBody
-public Cours ajouterCours(@RequestBody Cours cours) {
+public Cours ajouterCours(@RequestBody CoursRequestedModel requestedModel) {
+	Cours cours = requestedModel.toCours();
 	coursService.addCours(cours);
 	return cours;
 }

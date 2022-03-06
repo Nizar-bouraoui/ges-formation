@@ -23,7 +23,7 @@ public class CoursService implements ICoursService {
 	CoursRepository coursRepository;
 
 	@Override
-	public Long addCours(Cours cours) {
+	public void addCours(Cours cours) {
 		try {
 			l.info("In addCours()" );
 			l.debug("i will start addCours() ");
@@ -32,7 +32,6 @@ public class CoursService implements ICoursService {
 		} catch (Exception e) {
 			l.error("error in addCours() : ", e);
 		}
-		return cours.getId();
 	}
 
 	@Override

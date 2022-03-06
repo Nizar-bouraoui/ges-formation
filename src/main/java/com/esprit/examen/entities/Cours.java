@@ -60,16 +60,14 @@ public class Cours implements Serializable {
 		return "Cours [id=" + id + ", description=" + description + ", typeCours=" + typeCours + ", intitule="
 				+ intitule + "]";
 	}
-	public Cours(Long id, String description, TypeCours typeCours, String intitule) {
+	public Cours(String description, TypeCours typeCours, String intitule) {
 		super();
-		this.id = id;
 		this.description = description;
 		this.typeCours = typeCours;
 		this.intitule = intitule;
 	}
 	public Cours() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	
