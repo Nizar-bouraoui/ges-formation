@@ -22,7 +22,7 @@ public class CoursServiceTest {
 		Cours cours = new Cours();
 		cours.setDescription("Maîtrisez Javascript grâce au cours le plus complet sur internet ! Projets, exercices, quiz, ES8 et bien d’autres !");
 		cours.setIntitule("JavaScript : la formation ULTIME");
-		cours.setTypeCours(TypeCours.Informatique);
+		cours.setTypeCours(TypeCours.INFORMATIQUE);
 		Long dataBeforeTest = coursRepository.count();
 		coursRepository.save(cours);
 		Long dataAfterTest = coursRepository.count();
