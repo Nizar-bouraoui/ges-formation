@@ -38,7 +38,7 @@ public class BootstrapData implements CommandLineRunner {
 		Cours cours = new Cours();
 		cours.setDescription("Maîtrisez Javascript grâce au cours le plus complet sur internet ! Projets, exercices, quiz, ES8 et bien d’autres !");
 		cours.setIntitule("JavaScript : la formation ULTIME");
-		cours.setTypeCours(TypeCours.Informatique);
+		cours.setTypeCours(TypeCours.INFORMATIQUE);
 		coursService.addCours(cours);
 		l.info("entity cours saved" );
 		
