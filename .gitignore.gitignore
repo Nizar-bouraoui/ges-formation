@@ -32,3 +32,10 @@ build/
 ### VS Code ###
 .vscode/
 /logging/
+/bin/
+/src/
+/mvnw
+/mvnw.cmd
+/pom.xml
+/README.md
+/spring.log

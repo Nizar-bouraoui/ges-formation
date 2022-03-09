@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.esprit.examen.entities.Cours;
 import com.esprit.examen.entities.Formateur;
 import com.esprit.examen.entities.TypeCours;
+import com.esprit.examen.requestedentities.FormateurRequestedModel;
 import com.esprit.examen.services.IFormateurService;
 
 @RestController
@@ -23,15 +24,17 @@ public class FormateurRestController {
 	
 	@PostMapping("/ajouterFormateur")
 	@ResponseBody
-	public Formateur ajouterFormateur(@RequestBody Formateur formateur) {
+	public Formateur ajouterFormateur(@RequestBody FormateurRequestedModel formateurRequestedModel) {
+		Formateur formateur = formateurRequestedModel.thisFormateur();
 		formateurService.addFormateur(formateur);
 		return formateur;
 	}
 
 	@PutMapping("/modifierFormateur")
 	@ResponseBody
-	public Formateur modifierFormateur(@RequestBody Formateur formateur) {
-		formateurService.addFormateur(formateur);
+	public Formateur modifierFormateur(@RequestBody FormateurRequestedModel formateurRequestedModel) {
+		Formateur formateur = formateurRequestedModel.thisFormateur();
+		formateurService.modifierFormateur(formateur);
 		return formateur;
 	}
 
